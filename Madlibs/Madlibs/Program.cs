@@ -128,9 +128,9 @@ namespace Madlibs
             string name = Console.ReadLine();
             Console.WriteLine("Enter another name");
             string name2 = Console.ReadLine();
-            Console.WriteLine("Enter a location");
+            Console.WriteLine("Enter a good hangout spot");
             string location = Console.ReadLine();
-            Console.WriteLine("Enter another location");
+            Console.WriteLine("Enter another hangout spot");
             string location2 = Console.ReadLine();
             Console.WriteLine("Enter a band name (get creative)");
             string bandName = Console.ReadLine();
@@ -155,7 +155,7 @@ namespace Madlibs
 
             if (libChoice == "1")
             {
-                Madlib1();
+                Madlib1(name, name2, location, location2, bandName, leadSinger, food, food2, resturant, resturant2, verb, aisleNumber, car1);
             }
             else if (libChoice == "2")
             {
@@ -167,11 +167,11 @@ namespace Madlibs
             }
         }
 
-        static void Madlib1()
+        public static void Madlib1(string name, string name2, string location, string location2, string bandName, string leadSinger, string food, string food2, string resturant, string resturant2, string verb, string aisleNumber, string car1)
         {
             Console.WriteLine("This is madlib 1");
-            Console.WriteLine();
-            Console.WriteLine("One day, {0} went to the {2}. While he was at the {2} he met a new friend! The friends name was {1} and {0} loved him. They even liked the same band! They talked on and on about how awesome {4}'s albums were and how they were in love with the lead singer {3}. They began their new friendship and did everything together! One day they decided to go for a picnic. {0}'s favorite food was {5}, but {2}'s favorite food was {6}! They went to {7} for the {5} and easily found it, however they couldn't find any {6}! They searched the entire store but to no avail, they could not find any {6}! They gave up at {7} and started out on their way to {8}. Once they arrived they began {9} down the aisles looking for some {6}! They turned the corner into aisle {10}... Finally! Right there on the wall was some {6}.. After all that searching they had finally found some. They checked out and hopped in their {11}.. They sped off to the {12}, the place they had agreed to go eat lunch and lived happily ever after.", name, name2, location, leadSinger, bandName, food, food2, resturant, resturant2, verb, aisleNumber, car1, location2);
+            Console.WriteLine(name);
+            Console.WriteLine("One day, {0} went to the {2}. While he was at the {2} he met a new friend! The friends name was {1} and {0} loved him. They even liked the same band! They talked on and on about how awesome {4}'s albums were and how they were in love with the lead singer {3}. They began their new friendship and did everything together! One day they decided to go for a picnic. {0}'s favorite food was {6}, but {1}'s favorite food was {6}! They went to {7} for the {5} and easily found it, however they couldn't find any {6}! They searched the entire store but to no avail, they could not find any {6}! They gave up at {7} and started out on their way to {8}. Once they arrived they began {9} down the aisles looking for some {6}! They turned the corner into aisle {10}... Finally! Right there on the wall was some {6}.. After all that searching they had finally found some. They checked out and hopped in their {11}.. They sped off to the {12}, the place they had agreed to go eat lunch and lived happily ever after.", name, name2, location, leadSinger, bandName, food, food2, resturant, resturant2, verb, aisleNumber, car1, location2);
             Console.WriteLine("Press enter to choose new questions and choose a new madlib, or exit!");
             Console.ReadLine();
             MadlibQuestions();
