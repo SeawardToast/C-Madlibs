@@ -17,11 +17,15 @@ namespace Madlibs
 
         static void Main(string[] args)
         {
+            Intro();
+        }
 
+        static void Intro()
+        {
             Console.WriteLine("Hello, what's your name?");
             string playerName = Console.ReadLine();
             Console.WriteLine("Hello {0}! That's a cool name, what's your favorite color?", playerName);
-            string favoriteColor =  Console.ReadLine();
+            string favoriteColor = Console.ReadLine();
             Console.WriteLine("Your name is {0} and your favorite color is {1}!  (press enter to continue)", playerName, favoriteColor);
             Console.ReadLine();
             Console.WriteLine("What city do you live in?");
@@ -43,15 +47,19 @@ namespace Madlibs
                     if (libAnswer == "yes")
                     {
                         Console.WriteLine("Okay, let's begin.  (press enter)");
-                        //goto
+                        Madlib();
+                    }
+                    else if (libAnswer == "no")
+                    {
+                        Console.WriteLine("Okay, so here's some instructions. I will ask you to enter a series of nouns, adajectives, and verbs. You can be as creative as you would like! Once I have asked you all the questions, you can choose to have either mad lib number one, two, or three. I will then write you a short story involving all of your answers to my questions!  (press enter)");
+                        Console.ReadLine();
+                        Madlib();
                     }
                     else
                     {
-                        Console.WriteLine("Okay, so here's some instructions. I will ask you to enter a series of nouns, adajectives, and verbs. You can be");
-                        Console.WriteLine("as creative as you would like! Once I have asked you all the questions, you can choose to have either mad lib number");
-                        Console.WriteLine("one, two, or three. I will then write you a short story involving all of your answers to my questions!  (press enter)");
+                        Console.WriteLine("I'm sorry I didn't quite understand what you said! Please restart (press enter)");
                         Console.ReadLine();
-                        //goto
+                        Intro();
                     }
                 }
                 else
@@ -59,7 +67,7 @@ namespace Madlibs
                     Console.WriteLine("Awe that sucks.. Come back when you want to play!");
                     Console.WriteLine("Game Over  (press enter)");
                     Console.ReadLine();
-                    Environment.Exit(1); 
+                    Environment.Exit(1);
                 }
             }
             else
@@ -73,12 +81,18 @@ namespace Madlibs
                     Console.ReadLine();
 
                 }
-                else
+                else if (gameAnswer == "no")
                 {
                     Console.WriteLine("Awe that sucks.. Come back when you want to play!");
                     Console.WriteLine("Game Over  (press enter)");
                 }
-                
+                else
+                {
+                    Console.WriteLine("I'm sorry I didn't quite understand what you said! Please restart (press enter)");
+                    Console.ReadLine();
+                    Intro();
+                }
+
 
             }
             //start madlib
@@ -87,6 +101,7 @@ namespace Madlibs
 
 
         }
+    }
 
         static void Madlib()
         {
@@ -95,4 +110,5 @@ namespace Madlibs
         }
 
     }
-}
+
+
