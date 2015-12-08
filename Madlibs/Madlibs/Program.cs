@@ -38,6 +38,10 @@ namespace Madlibs
         {
             Console.WriteLine("Hello, what's your name?");
             string playerName = Console.ReadLine();
+            if (playerName == "skip")
+            {
+                MadlibQuestions();
+            }
             Console.WriteLine("Hello {0}! That's a cool name, what's your favorite color?", playerName);
             string favoriteColor = Console.ReadLine();
             Console.WriteLine("Your name is {0} and your favorite color is {1}!  (press enter to continue)", playerName, favoriteColor);
@@ -95,8 +99,25 @@ namespace Madlibs
                 if (gameAnswer == "yes")
                 {
                     Console.WriteLine("Awesome! Have you ever done a mad lib before? yes/no");
-                    Console.ReadLine();
+                    string libAnswer = Console.ReadLine();
 
+                    if (libAnswer == "yes")
+                    {
+                        Console.WriteLine("Okay, let's begin.  (press enter)");
+                        Console.ReadLine();
+                        MadlibQuestions();
+                    }
+                    else if (libAnswer == "no")
+                    {
+                        Console.WriteLine("Okay, so here's some instructions. I will ask you to enter a series of nouns, adajectives, and verbs. You can be as creative as you would like! Once I have asked you all the questions, you can choose to have either mad lib number one, two, or three. I will then write you a short story involving all of your answers to my questions!  (press enter)");
+                        Console.ReadLine();
+                        MadlibQuestions();
+                    }
+                    else
+                    {
+                        Confused();
+
+                    }
                 }
                 else if (gameAnswer == "no")
                 {
@@ -171,7 +192,7 @@ namespace Madlibs
         {
             Console.WriteLine("This is madlib 1");
             Console.WriteLine(name);
-            Console.WriteLine("One day, {0} went to the {2}. While he was at the {2} he met a new friend! The friends name was {1} and {0} loved him. They even liked the same band! They talked on and on about how awesome {4}'s albums were and how they were in love with the lead singer {3}. They began their new friendship and did everything together! One day they decided to go for a picnic. {0}'s favorite food was {6}, but {1}'s favorite food was {6}! They went to {7} for the {5} and easily found it, however they couldn't find any {6}! They searched the entire store but to no avail, they could not find any {6}! They gave up at {7} and started out on their way to {8}. Once they arrived they began {9} down the aisles looking for some {6}! They turned the corner into aisle {10}... Finally! Right there on the wall was some {6}.. After all that searching they had finally found some. They checked out and hopped in their {11}.. They sped off to the {12}, the place they had agreed to go eat lunch and lived happily ever after.", name, name2, location, leadSinger, bandName, food, food2, resturant, resturant2, verb, aisleNumber, car1, location2);
+            Console.WriteLine("One day, {0} went to the {2}. While he was at the {2} he met a new friend! The friends name was {1} and {0} loved him. They even liked the same band! They talked on and on about how awesome {4}'s albums were and how they were in love with the lead singer {3}. They began their new friendship and did everything together! One day they decided to go for a picnic. {0}'s favorite food was {5}, but {1}'s favorite food was {6}! They went to {7} for the {5} and easily found it, however they couldn't find any {6}! They searched the entire store but to no avail, they could not find any {6}! They gave up at {7} and started out on their way to {8}. Once they arrived they began {9} down the aisles looking for some {6}! They turned the corner into aisle {10}... Finally! Right there on the wall was some {6}.. After all that searching they had finally found some. They checked out and hopped in their {11}.. They sped off to the {12}, the place they had agreed to go eat lunch and lived happily ever after.", name, name2, location, leadSinger, bandName, food, food2, resturant, resturant2, verb, aisleNumber, car1, location2);
             Console.WriteLine("Press enter to choose new questions and choose a new madlib, or exit!");
             Console.ReadLine();
             MadlibQuestions();
